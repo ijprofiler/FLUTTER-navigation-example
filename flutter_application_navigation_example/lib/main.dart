@@ -20,6 +20,10 @@ class MyApp extends StatelessWidget {
         ),
         body: HomePage(),
       ),
+      initialRoute: '/',
+      routes: {
+        '/page2': (context) => Page2(),
+      },
     );
   }
 }
@@ -32,8 +36,7 @@ class HomePage extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          Route route = MaterialPageRoute(builder: (context) => Page2());
-          Navigator.push(context, route);
+          Navigator.pushNamed(context, '/page2');
         },
         child: Text('Move to Page 2'),
       ),
